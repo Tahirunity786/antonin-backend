@@ -1,0 +1,77 @@
+:root{
+
+    --bs-table-bg: 33, 37, 41;
+}
+
+.padd {
+    padding-top: 0.2rem;
+    padding-bottom: 0.38rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -153px;
+    right: 0px;
+}
+
+.index-nav-label {
+    cursor: pointer;
+}
+
+.index-nav-input {
+    display: none;
+}
+
+.main-btn {
+    border-radius: 0px;
+}
+
+.main-div {
+    border: 1px solid white;
+    height: 90%;
+    margin-bottom: 10px;
+}
+
+.main-row-col {
+    border-radius: 0px;
+    display: inline-block;
+    font-size: small;
+}
+
+.main-row-col-close {
+    cursor: pointer;
+}
+
+.main-row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+footer {
+    border-top: 2px solid white;
+    height: 50px;
+}
+
+
+html,body, main, .container-fluid, .row {
+    height: 100%;
+
+}
+.nav-link{
+    font-size: small;
+}
+.btn{
+    font-size: small;
+}
+.f-d{
+    font-size: x-small;
+}
+th, td{
+    font-size: x-small;
+}
+
+.list-group-item{
+    background-color: rgb(33, 37, 41);
+}

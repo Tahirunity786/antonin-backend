@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    {% comment %} Scalable ViewPoint {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css linkage -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% comment %} Usefull css links {% endcomment %}
+    {% block extracsslinks %} {% endblock %}
+    {% comment %} Dynamic title {% endcomment %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    {% comment %} Dynamic Navbar {% endcomment %}
+    {% block navbar %}{% endblock navbar %}
+    {% comment %} Dynamic Content {% endcomment %}
+    {% block content %}{% endblock content %}
+   
+    {% comment %} Dynamic Footer {% endcomment %}
+    {% block footer %}{% endblock footer %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    {% block jsscripts %}{% endblock jsscripts %}
+    {% block scripts %}{% endblock scripts %}
+</body>
+
+</html>

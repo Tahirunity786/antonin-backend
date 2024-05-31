@@ -1,0 +1,46 @@
+{
+ "OS": "mac",
+ "maxSCaseIDDigits": 3,
+ "SCaseIDValidTypes": [
+  "N",
+  "P"
+ ],
+ "muscleSegmentationModelDir": "D:\\Data\\Pezhman\\EPFL\\Shoulder\\segmentationElham\\pythonCode",
+ "dataDir": "/Users/antonin/Desktop/Projet_inge\u0301nierie_simultane\u0301e/data",
+ "landmarkAndSurfaceFilesFolder": "python",
+ "casesToMeasure": [
+  "P216"
+ ],
+ "shouldersToMeasure": {
+  "rightAuto": true,
+  "rightManual": false,
+  "leftAuto": true,
+  "leftManual": false
+ },
+ "runMeasurements": {
+  "loadData": true,
+  "sliceRotatorCuffMuscles": false,
+  "segmentRotatorCuffMuscles": false,
+  "morphology": true,
+  "measureFirst": true,
+  "measureSecond": true,
+  "measureGlenoidDensity": false
+ },
+ "rotatorCuffSliceName": "rotatorCuffMatthieu",
+ "numberOfObliqueSlices": 0,
+ "croppedRotatorCuff": false,
+ "rotatorCuffSegmentationName": "autoMatthieu",
+ "muscleSubdivisionsResolutionInMm": {
+  "x": 5,
+  "y": 5
+ },
+ "runFE": false,
+ "AbaqusTempDir": "C:\\Temp\\autoFE",
+ "abaqusBat": "C:\\SIMULIA\\Commands\\abq2023.bat",
+ "codeRootDir": "/Users/antonin/project/pythonProject",
+ "implantFilesDir": "D:\\Data\\Pezhman\\EPFL\\Shoulder\\Data\\PerformGlenoid\\stl",
+ "tempDockerDir": "D:\\Data\\Pezhman\\EPFL\\Shoulder\\Data\\PerformGlenoid\\stl",
+ "overwriteMeasurements": true,
+ "saveMeasurements": true,
+ "saveAllMeasurementsInOneFile": false
+}

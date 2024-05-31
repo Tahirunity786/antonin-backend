@@ -1,0 +1,264 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block extracsslinks %}
+<link rel="stylesheet" href="{% static 'css/bootstrap-utilities.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock extracsslinks %}
+
+{% block title %}Dashboard{% endblock title %}
+{% block navbar %}
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <input type="file" name="filer" id="openfile" class="index-nav-input">
+                    <label for="openfile" style="cursor: pointer;" class="nav-link me-3" aria-current="page"
+                        class="index-nav-label">
+                        <div class="text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-folder" viewBox="0 0 16 16">
+                                <path
+                                    d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z" />
+                            </svg>
+                        </div>
+                        Open file
+                    </label>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <div class="text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-floppy" viewBox="0 0 16 16">
+                                <path d="M11 2H9v3h2z" />
+                                <path
+                                    d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                            </svg>
+                        </div>
+                        Save Project
+                    </a>
+                </li>
+                <li class="nav-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <div class="text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                            </svg>
+                        </div>
+                        Delete Project
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="ms-auto">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-light rounded-pill padd" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/account/">My Account</a></li>
+                        <li><a class="dropdown-item" href="/logout/">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+{% endblock navbar %}
+{% block content %}
+
+<main>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-3 bg-dark text-white h-100">
+                <button class="btn btn-secondary mt-2 mb-2" class="main-btn" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="pb-2 pe-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z" />
+                        </svg></i> Data Manager
+                </button>
+
+
+
+                <div class="main-div">
+                    <div class="container pt-2 pb-2">
+                        <div class="collapse show" id="collapseExample">
+                            <div class="card card-body bg-dark">
+                                <p style="margin-bottom: 0.4rem;" data-bs-toggle="collapse" href="#yu" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    </svg>
+                                    <span>directory name</span>
+                                </p>
+                                <div class="collapse" id="yu">
+
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value=""
+                                                id="firstCheckboxStretched">
+                                            <label class="form-check-label stretched-link text-light"
+                                                for="firstCheckboxStretched">First file</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value=""
+                                                id="secondCheckboxStretched">
+                                            <label class="form-check-label stretched-link text-light"
+                                                for="secondCheckboxStretched">Second file</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value=""
+                                                id="thirdCheckboxStretched">
+                                            <label class="form-check-label stretched-link text-light"
+                                                for="thirdCheckboxStretched">Third file</label>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 bg-dark h-100">
+                <div class="navigator mb-1">
+                    <div class="d-flex-justify-content-start align-items-center">
+                        <div class="bg-primary mt-2 mb-2 ps-2 pe-2 p-1 text-white me-2 main-row-col">
+                            <i class="pb-2 pe-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z" />
+                                </svg></i> Display-1
+                            <i class="ms-2 close-btn main-row-col-close"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="10" height="10" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg></i>
+                        </div>
+                        <div class="bg-primary mt-2 mb-2 ps-2 pe-2 p-1 text-white me-2 main-row-col">
+                            <i class="pb-2 pe-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z" />
+                                </svg></i> Display-2
+                            <i class="ms-2 close-btn main-row-col-close"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="10" height="10" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-div">
+                    <img src="{% static 'media/background.jpg' %}" style="width: 100%;" height="100%" alt="">
+                </div>
+            </div>
+            <div class="col-lg-3 bg-dark h-100">
+                <button class="btn btn-secondary mt-2 mb-2" class="main-btn">
+                    <i class="pb-2 pe-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
+                            <path
+                                d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1z" />
+                        </svg></i> Measurements
+                </button>
+                <div class="main-div">
+                    <div class="d-flex justify-content-between p-2 mb-2">
+                        <div id="on">
+                            <button class="btn btn-secondary f-d">Selected Data Mode</button>
+
+                        </div>
+
+                    </div>
+                    <div class="mb-2 p-1">
+                        <table class="table table-dark table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Group#</th>
+                                    <th scope="col">Element#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td colspan="2">
+                                        @mdo
+                                        @mdo
+                                        @mdo
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="container text-center">
+                        <button class="btn btn-success w-100">Export csv</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body" style="height: 100px;">
+                Are you want to delete this project?
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block jsscripts %}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock jsscripts %}
+{% block scripts %}
+<script>
+    // Get all close buttons
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    // Add click event listener to each close button
+    closeButtons.forEach(closeButton => {
+        closeButton.addEventListener('click', function () {
+            // Hide the parent div when the close button is clicked
+            this.parentNode.style.display = 'none';
+        });
+    });
+
+   
+</script>
+{% endblock scripts %}
